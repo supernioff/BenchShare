@@ -1,0 +1,6 @@
+{
+  "name": "BenchShare - Institutional Lab Resource Platform",
+  "description": "Institutional lab equipment and bench sharing platform with role-based workflows, tamper-evident SHA-256 audit log, photo verification check-in, and AI incident analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -9,32 +9,9 @@ interface SummarizeRequest {
 }
 
 export async function summarizeIncidentWithAI(req: SummarizeRequest): Promise<AISummary> {
-  // Attempt to call server-side Gemini endpoint first
-  try {
-    const res = await fetch('/api/summarize-incident', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(req),
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      if (data && data.executiveSummary) {
-        return {
-          ...data,
-          generatedAt: new Date().toISOString(),
-          modelUsed: data.modelUsed || 'gemini-3.8-flash',
-        };
-      }
-    }
-  } catch (err) {
-    // Network or server endpoint unavailable, fall through to intelligent heuristics engine
-    console.warn('Backend AI endpoint unavailable or error, activating laboratory EHS heuristic agent:', err);
-  }
-
-  // High-fidelity laboratory safety knowledge synthesizer (fallback)
-  // Provides instantaneous, structured, context-specific institutional analysis
-  await new Promise((resolve) => setTimeout(resolve, 850)); // Realistic processing latency
+  // Deterministic, local rule-based engine: keyword rules map the report to a draft summary.
+  // No external AI model is called. Output is a draft for human (manager) review.
+    await new Promise((resolve) => setTimeout(resolve, 850)); // Realistic processing latency
 
   const descLower = req.rawDescription.toLowerCase();
   const equipLower = req.equipmentName.toLowerCase();
@@ -88,6 +65,6 @@ export async function summarizeIncidentWithAI(req: SummarizeRequest): Promise<AI
     recommendedCAPA,
     disciplinaryAssessment,
     generatedAt: new Date().toISOString(),
-    modelUsed: 'gemini-3.8-flash (via Institutional EHS Core Engine)',
+    modelUsed: 'Rule-based engine (no external AI model)',
   };
 }

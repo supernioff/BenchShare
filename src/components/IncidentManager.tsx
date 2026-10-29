@@ -152,10 +152,10 @@ export const IncidentManager: React.FC<IncidentManagerProps> = ({
             <span className="text-slate-600">·</span>
             <span className="text-xs text-slate-400">Institutional EHS & CAPA Protocol</span>
           </div>
-          <h1 className="text-xl font-bold text-white mt-1">Laboratory Incidents, Faults & AI Summariser</h1>
+          <h1 className="text-xl font-bold text-white mt-1">Laboratory Incidents, Faults & Rule-Based Incident Assistant</h1>
           <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Empowers students and lab custodians to report equipment errors, spills, or disputes transparently.
-            The built-in <strong className="text-teal-300">AI Incident Summariser</strong> parses technical descriptions into institutional CAPA & OSHA compliance briefs.
+            The built-in <strong className="text-teal-300">Rule-Based Incident Assistant</strong> parses technical descriptions into institutional CAPA & OSHA compliance briefs.
           </p>
         </div>
 
@@ -292,7 +292,7 @@ export const IncidentManager: React.FC<IncidentManagerProps> = ({
                       </div>
                       <div>
                         <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-                          AI Incident Summariser & Risk Brief
+                          Rule-Based Incident Assistant & Risk Brief (draft for manager review)
                         </h3>
                         <span className="text-[10px] text-teal-400 font-mono">
                           Generated via {selectedIncidentForView.aiSummary.modelUsed}
@@ -378,7 +378,7 @@ export const IncidentManager: React.FC<IncidentManagerProps> = ({
                       rows={2}
                       value={managerResolutionNote}
                       onChange={(e) => setManagerResolutionNote(e.target.value)}
-                      placeholder="Rahul: Enter formal resolution notes, sign-off on AI CAPA recommendations, and release equipment..."
+                      placeholder="Rahul: Enter formal resolution notes, sign-off on the drafted CAPA recommendations, and release equipment..."
                       className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-xs text-white focus:outline-none focus:border-teal-400 resize-none"
                     />
 
@@ -402,7 +402,7 @@ export const IncidentManager: React.FC<IncidentManagerProps> = ({
             </div>
           ) : (
             <div className="bg-slate-900 border border-slate-800 rounded-xl p-12 text-center text-slate-500">
-              Select an incident from the list to view the AI analysis.
+              Select an incident from the list to view the drafted analysis.
             </div>
           )}
         </div>
@@ -525,7 +525,7 @@ export const IncidentManager: React.FC<IncidentManagerProps> = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-teal-400" />
-                    <span className="font-bold text-white">AI Incident Summariser</span>
+                    <span className="font-bold text-white">Rule-Based Incident Assistant</span>
                   </div>
                   <button
                     type="button"
@@ -541,7 +541,7 @@ export const IncidentManager: React.FC<IncidentManagerProps> = ({
                     ) : (
                       <>
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Run AI Incident Summariser</span>
+                        <span>Run Rule-Based Incident Assistant</span>
                       </>
                     )}
                   </button>
@@ -562,7 +562,7 @@ export const IncidentManager: React.FC<IncidentManagerProps> = ({
                   </div>
                 ) : (
                   <p className="text-[11px] text-slate-400">
-                    Click the button above to have Gemini AI analyze the description, determine OSHA risk level, and formulate CAPA recommendations for Manager Rahul.
+                    Click the button above to have the rule-based engine draft an analysis from the description, determine OSHA risk level, and formulate CAPA recommendations for Manager Rahul.
                   </p>
                 )}
               </div>

@@ -442,7 +442,7 @@ export const INITIAL_INCIDENTS: IncidentReport[] = [
       ],
       disciplinaryAssessment: 'Exemplary procedural adherence by graduate researcher. No punitive action or quota reduction warranted.',
       generatedAt: '2026-10-27T19:05:00.000Z',
-      modelUsed: 'gemini-3.8-flash (BenchShare Core EHS Agent)',
+      modelUsed: 'Rule-based engine (no external AI model)',
     },
   },
 ];

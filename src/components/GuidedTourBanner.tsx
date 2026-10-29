@@ -63,11 +63,11 @@ export const GuidedTourBanner: React.FC<GuidedTourBannerProps> = ({
     },
     {
       id: 'step-5',
-      title: '5. AI Incident Summariser',
+      title: '5. Rule-Based Incident Assistant',
       tab: 'incidents',
       role: 'student' as UserRole,
       icon: Sparkles,
-      desc: 'Draft EHS analysis & CAPA with Gemini AI',
+      desc: 'Draft EHS analysis & CAPA (rule-based, manager decides)',
     },
     {
       id: 'step-6',

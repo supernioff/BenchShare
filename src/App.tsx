@@ -249,7 +249,7 @@ export default function App() {
       capaStepsCount: incident.aiSummary?.recommendedCAPA.length || 0,
     });
 
-    showToast(`Incident #${incident.id} logged with AI analysis for Manager Rahul.`);
+    showToast(`Incident #${incident.id} logged with a drafted analysis for Manager Rahul.`);
   };
 
   // Resolve Incident

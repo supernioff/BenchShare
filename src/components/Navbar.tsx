@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     },
     {
       id: 'incidents',
-      label: 'Incidents & AI Summariser',
+      label: 'Incidents & Assistant',
       icon: AlertTriangle,
       badge: null,
     },
